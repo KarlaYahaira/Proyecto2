@@ -1,8 +1,9 @@
-import tkinter
+#se llaman a las respectivas librerías
 from tkinter import *
 import random
 
-class sumasrapidas():
+
+class sumasrapidas():#se crea la ventana que va a contener el dato, las vidas y el resultado
     def __init__(self, vidas):
         root = Tk()
         self.num1 = IntVar()
@@ -21,6 +22,7 @@ class sumasrapidas():
         self.aceptar.grid(row=7, column=8)
         Label(self.root, text=str(self.rango_numero1) + "+" + str(self.rango_numero2), bg="white", fg="green").grid(row=8, column=8)
 
+#se define la operación para la suma
     def suma(self):
         if int(self.captura.get()) == self.rango_numero1 + self.rango_numero2:
             Label(self.root, text="Correcto", bg="white", fg="green").grid(row=9, column=8)
@@ -37,8 +39,8 @@ class sumasrapidas():
         self.rango_numero2 = random.randint(0, 50)
         Label(self.root, text=str(self.rango_numero1) + "+" + str(self.rango_numero2), bg="white", fg="green").grid(row=8, column=8)
 
-# if __name__ == "__main__":
-#     root = Tk()
-#     vidas = 3
-#     instancia = sumasrapidas(root, vidas)
-#     root.mainloop()
+if __name__ == "__main__":
+    root = Tk()
+    vidas = 3
+    instancia = sumasrapidas(root, vidas)
+    root.mainloop()
