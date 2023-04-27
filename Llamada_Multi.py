@@ -6,7 +6,7 @@ import Funciones
 
 # se crea una clase donde se implementa el llamado de la contraseña
 class App(tk.Frame):
-    def __init__(self, master=None):
+    def __init__(self, master):
         super().__init__()
 
         # Creacion de los tres ventanas

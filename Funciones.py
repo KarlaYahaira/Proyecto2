@@ -2,7 +2,6 @@ import sys
 import tkinter as tk
 from Principal import Panel
 
-
 #la ventana principal de donde mostrara laa tablas
 class VentanaPrincipal(Panel):
     def __init__(self, master, *args, **kwargs):
@@ -25,6 +24,7 @@ class VentanaPrincipal(Panel):
 
 #el proceso para realizar las tablas de multiplicar
 class VentanaTabla(Panel):
+
     def __init__(self, master, *args, **kwargs):
         super().__init__(master, *args, **kwargs)
         tk.Label(self, text="Introduce un numero del 1 al 10" "\n" 
@@ -34,11 +34,13 @@ class VentanaTabla(Panel):
         self.e1.pack()
         self.update()
         tk.Button(self, text="Click", command=self.tablaMulti).pack()
+
     def tablaMulti(self):
         try:
-            numeroInt = int(self.numero.get())
+            numeroInt = int(self.e1.get())
         except:
             numeroInt = -1
+
         if numeroInt >= 0:
             salida = []
             for i in range(0, 11):
